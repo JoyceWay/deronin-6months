@@ -1,330 +1,897 @@
-/* =============================================================
-   6 个月，成为 AI 工程师 · Become an AI Engineer in 6 Months
-   Styles: Single CSS file, pure static layout, calm & minimal
-   ============================================================= */
+/* ==========================================================================
+   DeRonin 6 Months AI Engineer Chinese Hub - Shared CSS (v2 Complete Edition)
+   ========================================================================== */
 
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap');
+
+/* --- Root Variables for Pages 1–4 (Warm Paper Theme) --- */
 :root {
-    /* Required Color Tokens */
-    --color-bg: #FAF7F1;
-    --color-text: #2A2A28;
-    --color-gold: #A8894F;
+  --bg-color: #FAF9F6;
+  --text-color: #2E2A26;
+  --accent-gold: #D4A853;
+  --accent-gold-light: rgba(212, 168, 83, 0.12);
+  --accent-gold-border: rgba(212, 168, 83, 0.35);
+  --text-muted: #6C665F;
+  --border-subtle: #E8E4DC;
+  --card-bg: #FFFFFF;
 
-    /* Subtle Tints & Borders */
-    --color-gold-light: rgba(168, 137, 79, 0.1);
-    --color-gold-border: rgba(168, 137, 79, 0.3);
-    --color-border-subtle: #E8E2D5;
-    --color-text-muted: #626058;
-    --color-card-bg: #FFFFFF;
+  --font-sans: 'Inter', 'Noto Sans SC', -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
 
-    /* Font Family: Noto Serif SC for ALL text */
-    --font-main: 'Noto Serif SC', serif;
+  --max-width-std: 700px;
+  --max-width-buildlog: 880px;
+
+  /* Build Log Rust Theme Accent */
+  --rust-accent: #B0603C;
 }
 
-/* Reset & Global Settings */
+/* --- Global Reset & Base --- */
 *, *::before, *::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 html {
-    font-size: 16px;
-    background-color: var(--color-bg);
-    color: var(--color-text);
-    font-family: var(--font-main);
-    line-height: 1.7;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
-    background-color: var(--color-bg);
-    padding: 3.5rem 1.25rem 6rem 1.25rem;
-    display: flex;
-    justify-content: center;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--font-sans);
+  line-height: 1.7;
+  padding: 0;
+  margin: 0;
 }
 
-/* Layout Container (Max-width 680px, Centered) */
-.container {
-    width: 100%;
-    max-width: 680px;
-    margin: 0 auto;
+a {
+  color: var(--text-color);
+  text-decoration: underline;
+  text-decoration-color: var(--accent-gold);
+  text-underline-offset: 3px;
+  transition: color 0.2s ease, text-decoration-color 0.2s ease;
 }
 
-/* Top Credit Link */
-.top-credit {
-    text-align: center;
-    margin-bottom: 2rem;
+a:hover {
+  color: var(--accent-gold);
 }
 
-.credit-link {
-    display: inline-block;
-    color: var(--color-gold);
-    font-family: var(--font-main);
-    font-size: 0.88rem;
-    font-weight: 500;
-    text-decoration: none;
-    padding: 0.3rem 0.8rem;
-    border: 1px solid var(--color-gold-border);
-    border-radius: 4px;
-    background-color: rgba(250, 247, 241, 0.8);
-    transition: all 0.2s ease;
+a[target="_blank"]::after {
+  content: " ↗";
+  font-size: 0.85em;
+  opacity: 0.7;
 }
 
-.credit-link:hover {
-    background-color: var(--color-gold-light);
-    border-color: var(--color-gold);
-    color: #8C703C;
+/* --- Navigation Bar (Shared across all 5 pages) --- */
+.site-nav {
+  width: 100%;
+  max-width: var(--max-width-std);
+  margin: 0 auto;
+  padding: 1.5rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/* Site Header */
-.site-header {
-    text-align: center;
-    margin-bottom: 2rem;
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 
-.site-title {
-    font-family: var(--font-main);
-    font-size: 2.1rem;
-    font-weight: 700;
-    color: var(--color-text);
-    letter-spacing: 0.02em;
-    margin-bottom: 0.4rem;
-    line-height: 1.3;
+.nav-link {
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--text-muted);
+  padding: 0.35rem 0.6rem;
+  border-radius: 4px;
+  transition: all 0.2s ease;
 }
 
-.site-subtitle {
-    font-family: var(--font-main);
-    font-size: 1.05rem;
-    font-weight: 400;
-    color: var(--color-text-muted);
-    letter-spacing: 0.03em;
+.nav-link:hover {
+  color: var(--text-color);
+  background-color: var(--accent-gold-light);
 }
 
-/* Gold Divider */
-.gold-divider {
-    border: none;
-    height: 1px;
-    background-color: var(--color-gold);
-    opacity: 0.5;
-    width: 80px;
-    margin: 2.2rem auto;
+.nav-link.active {
+  color: var(--accent-gold);
+  font-weight: 700;
+  border-bottom: 2px solid var(--accent-gold);
+  border-radius: 0;
 }
 
-/* Intro Section */
-.intro-section {
-    text-align: center;
-    margin-bottom: 3.5rem;
-    padding: 0 0.5rem;
+/* --- Container for Pages 1–4 --- */
+.main-container {
+  width: 100%;
+  max-width: var(--max-width-std);
+  margin: 0 auto;
+  padding: 2rem 1.25rem 5rem 1.25rem;
 }
 
-.intro-text-cn {
-    font-size: 1.02rem;
-    color: var(--color-text);
-    line-height: 1.8;
-    margin-bottom: 0.6rem;
-    font-weight: 400;
+/* --- Top Credit Link --- */
+.top-credit-bar {
+  text-align: center;
+  margin-bottom: 2.5rem;
 }
 
-.intro-text-en {
-    font-size: 0.9rem;
-    color: var(--color-text-muted);
-    line-height: 1.6;
-    font-weight: 300;
+.credit-badge {
+  display: inline-block;
+  font-size: 0.85rem;
+  color: var(--accent-gold);
+  border: 1px solid var(--accent-gold-border);
+  background-color: var(--accent-gold-light);
+  padding: 0.35rem 0.85rem;
+  border-radius: 20px;
+  text-decoration: none;
+  transition: all 0.2s ease;
 }
 
-/* Month Cards List */
-.month-list {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
+.credit-badge:hover {
+  background-color: var(--accent-gold);
+  color: #FFFFFF;
 }
 
-.month-card {
-    background-color: var(--color-card-bg);
-    border: 1px solid var(--color-border-subtle);
-    border-radius: 8px;
-    padding: 1.8rem 2rem;
-    box-shadow: 0 2px 10px rgba(42, 42, 40, 0.02);
-    transition: border-color 0.2s ease, box-shadow 0.2s ease;
-}
-
-.month-card:hover {
-    border-color: var(--color-gold-border);
-    box-shadow: 0 4px 16px rgba(168, 137, 79, 0.06);
-}
-
-/* Card Header & Tag */
-.card-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 1rem;
-}
-
-.month-label {
-    font-family: var(--font-main);
-    font-size: 0.95rem;
-    font-weight: 700;
-    color: var(--color-gold);
-    letter-spacing: 0.04em;
-}
-
-.status-tag {
-    font-family: var(--font-main);
-    font-size: 0.8rem;
-    font-weight: 500;
-    padding: 0.25rem 0.65rem;
-    border-radius: 4px;
-    letter-spacing: 0.02em;
-}
-
-.status-in-progress {
-    color: var(--color-gold);
-    background-color: var(--color-gold-light);
-    border: 1px solid var(--color-gold-border);
-}
-
-.status-planned {
-    color: var(--color-text-muted);
-    background-color: #F3EFE8;
-    border: 1px solid #E2DCCF;
-}
-
-/* Card Title */
-.card-title {
-    font-family: var(--font-main);
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: var(--color-text);
-    margin-bottom: 1.2rem;
-    padding-bottom: 0.75rem;
-    border-bottom: 1px dashed var(--color-border-subtle);
-    line-height: 1.4;
-}
-
-.title-cn {
-    color: var(--color-text);
-}
-
-.title-sep {
-    color: var(--color-gold);
-    margin: 0 0.35rem;
-    font-weight: 400;
+/* --- Header Section (Pages 1–4) --- */
+.page-header {
+  text-align: center;
+  margin-bottom: 3rem;
 }
 
 .title-en {
-    font-size: 1.05rem;
-    font-weight: 400;
-    color: var(--color-text-muted);
+  display: block;
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--text-color);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.35rem;
 }
 
-/* Topic List */
-.topic-list {
-    list-style-type: none;
-    margin-bottom: 1.4rem;
-    padding-left: 0.2rem;
+.title-cn {
+  display: block;
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--accent-gold);
+  letter-spacing: 0.02em;
 }
 
-.topic-list li {
-    font-size: 0.95rem;
-    line-height: 1.9;
-    color: var(--color-text);
-    position: relative;
-    padding-left: 1.2rem;
+.header-divider {
+  border: none;
+  height: 1px;
+  background-color: var(--accent-gold);
+  opacity: 0.4;
+  width: 60px;
+  margin: 1.75rem auto;
 }
 
-.topic-list li::before {
-    content: '•';
-    color: var(--color-gold);
-    position: absolute;
-    left: 0;
-    top: 0;
-    font-size: 1.1rem;
+/* --- Intro Section --- */
+.intro-box {
+  background: var(--card-bg);
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 3rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.02);
 }
 
-.topic-cn {
-    font-weight: 400;
+.intro-box p {
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+  line-height: 1.7;
 }
 
-.topic-sep {
-    color: var(--color-text-muted);
-    margin: 0 0.3rem;
-    opacity: 0.6;
+.intro-box p:last-child {
+  margin-bottom: 0;
 }
 
-.topic-en {
-    font-size: 0.88rem;
-    color: var(--color-text-muted);
+.intro-en {
+  color: var(--text-muted);
+  font-size: 0.92rem;
 }
 
-/* Milestone Box */
-.milestone-box {
-    background-color: var(--color-bg);
-    border-left: 3px solid var(--color-gold);
-    padding: 0.85rem 1.1rem;
-    border-radius: 0 6px 6px 0;
-    font-size: 0.92rem;
-    line-height: 1.6;
+/* --- Page 1 Entry Cards --- */
+.entry-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+  margin-bottom: 3.5rem;
 }
 
-.milestone-tag {
-    display: block;
-    font-weight: 700;
-    color: var(--color-gold);
-    font-size: 0.85rem;
-    letter-spacing: 0.03em;
-    margin-bottom: 0.25rem;
+.entry-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  padding: 1.35rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
 }
 
-.milestone-desc-cn {
-    display: block;
-    color: var(--color-text);
-    font-weight: 500;
+.entry-card:hover {
+  border-color: var(--accent-gold);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(212, 168, 83, 0.1);
 }
 
-.milestone-desc-en {
-    display: block;
-    color: var(--color-text-muted);
-    font-size: 0.85rem;
-    margin-top: 0.15rem;
+.entry-card-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-color);
+  margin-bottom: 0.5rem;
 }
 
-/* Site Footer */
+.entry-card-title .en-sub {
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--text-muted);
+  margin-left: 0.3rem;
+}
+
+.entry-card-desc {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  text-decoration: none;
+}
+
+/* --- Page 1 Dashboard Month Cards --- */
+.dashboard-section {
+  margin-top: 2rem;
+}
+
+.section-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text-color);
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.section-title::before {
+  content: "";
+  display: inline-block;
+  width: 4px;
+  height: 1.2rem;
+  background-color: var(--accent-gold);
+  border-radius: 2px;
+}
+
+.dashboard-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.dashboard-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  padding: 1.35rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.dashboard-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.month-label-badge {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--accent-gold);
+}
+
+.status-badge {
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 0.2rem 0.6rem;
+  border-radius: 12px;
+  text-transform: uppercase;
+}
+
+.status-badge.in-progress {
+  background-color: var(--accent-gold);
+  color: #FFFFFF;
+}
+
+.status-badge.planned {
+  background-color: #EFECE6;
+  color: var(--text-muted);
+}
+
+.dashboard-theme {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.dashboard-links {
+  display: flex;
+  gap: 1.25rem;
+  font-size: 0.88rem;
+  margin-top: 0.25rem;
+}
+
+.dashboard-links a {
+  color: var(--accent-gold);
+  font-weight: 500;
+}
+
+/* --- Page 2 (Guide) Styling --- */
+.guide-section {
+  margin-bottom: 2.5rem;
+}
+
+.guide-section h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-color);
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.guide-section p {
+  font-size: 0.98rem;
+  line-height: 1.75;
+  color: var(--text-color);
+  margin-bottom: 0.75rem;
+}
+
+.guide-section ol, .guide-section ul {
+  padding-left: 1.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.guide-section li {
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+/* --- Page 3 (Resources) Styling --- */
+.resources-anchor-nav {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 2.5rem;
+  background: var(--card-bg);
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: 1px solid var(--border-subtle);
+}
+
+.resources-anchor-nav a {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent-gold);
+  text-decoration: none;
+  padding: 0.25rem 0.65rem;
+  border-radius: 4px;
+  background-color: var(--accent-gold-light);
+}
+
+.resources-anchor-nav a:hover {
+  background-color: var(--accent-gold);
+  color: #FFFFFF;
+}
+
+.month-block {
+  margin-bottom: 3.5rem;
+}
+
+.month-block-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text-color);
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--accent-gold);
+}
+
+.week-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.week-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-color);
+  margin-bottom: 1rem;
+}
+
+.resource-list {
+  list-style: none;
+  margin-bottom: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.resource-item {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.tag-required {
+  background-color: var(--accent-gold);
+  color: #FFFFFF;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.15rem 0.45rem;
+  border-radius: 4px;
+  margin-right: 0.5rem;
+  display: inline-block;
+}
+
+.tag-optional {
+  border: 1px solid var(--text-muted);
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 0.12rem 0.4rem;
+  border-radius: 4px;
+  margin-right: 0.5rem;
+  display: inline-block;
+}
+
+.task-box {
+  background-color: var(--bg-color);
+  border-left: 3px solid var(--accent-gold);
+  padding: 0.75rem 1rem;
+  border-radius: 0 4px 4px 0;
+  font-size: 0.92rem;
+  margin-bottom: 1rem;
+}
+
+.task-label {
+  font-weight: 700;
+  color: var(--text-color);
+}
+
+.week-note-link {
+  display: block;
+  text-align: right;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--accent-gold);
+  text-decoration: none;
+}
+
+.week-note-link:hover {
+  text-decoration: underline;
+}
+
+/* --- Page 4 (Notes) Styling --- */
+.notes-intro {
+  font-size: 1rem;
+  color: var(--text-muted);
+  margin-bottom: 2.5rem;
+  text-align: center;
+  line-height: 1.7;
+}
+
+.notes-month-section {
+  margin-bottom: 3.5rem;
+}
+
+.notes-month-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text-color);
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--accent-gold);
+}
+
+.note-entry-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.note-entry-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.note-week-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-color);
+}
+
+.note-backlink {
+  font-size: 0.85rem;
+  color: var(--accent-gold);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.note-body-skeleton {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  font-style: italic;
+  padding: 0.5rem 0;
+}
+
+.direction-subentry {
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px dashed var(--border-subtle);
+}
+
+.direction-tag {
+  font-weight: 600;
+  color: var(--accent-gold);
+  font-size: 0.88rem;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+/* --- Footer (Pages 1–4) --- */
 .site-footer {
-    text-align: center;
-    margin-top: 4.5rem;
-    padding-top: 2rem;
-    border-top: 1px solid var(--color-border-subtle);
+  width: 100%;
+  max-width: var(--max-width-std);
+  margin: 4rem auto 0 auto;
+  padding: 1.5rem 1rem 3rem 1rem;
+  border-top: 1px solid var(--accent-gold-border);
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--text-muted);
 }
 
-.footer-text {
-    font-family: var(--font-main);
-    font-size: 0.9rem;
-    color: var(--color-gold);
-    letter-spacing: 0.04em;
+.footer-line-1 {
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+  color: var(--text-color);
 }
 
-/* Responsive Tweaks */
-@media (max-width: 580px) {
-    body {
-        padding: 2rem 1rem 4rem 1rem;
-    }
+.footer-line-2 {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
 
-    .site-title {
-        font-size: 1.7rem;
-    }
+.footer-line-2 a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.82rem;
+}
 
-    .site-subtitle {
-        font-size: 0.95rem;
-    }
+.footer-line-2 a:hover {
+  color: var(--accent-gold);
+}
 
-    .month-card {
-        padding: 1.4rem 1.25rem;
-    }
 
-    .card-top {
-        flex-direction: row;
-        align-items: center;
-    }
+/* ==========================================================================
+   PAGE 5: BUILD LOG (build-log.html) — LOCKED VISUAL SYSTEM
+   ========================================================================== */
+
+body.build-log-body {
+  background-color: #F4F6F9;
+  background-image: linear-gradient(to right, rgba(120, 140, 170, 0.13) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(120, 140, 170, 0.13) 1px, transparent 1px);
+  background-size: 28px 28px;
+  color: #16161A;
+  font-family: 'Inter', -apple-system, sans-serif;
+}
+
+/* Top Nav Overrides for Build Log */
+.build-log-body .site-nav {
+  max-width: var(--max-width-buildlog);
+  background: transparent;
+}
+
+.build-log-body .nav-link {
+  color: #16161A;
+  font-family: 'Inter', sans-serif;
+}
+
+.build-log-body .nav-link.active {
+  color: var(--rust-accent);
+  border-bottom: 2px solid var(--rust-accent);
+}
+
+/* Build Log Main Container */
+.build-log-container {
+  width: 100%;
+  max-width: var(--max-width-buildlog);
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem 6rem 1.25rem;
+}
+
+/* Header Elements */
+.workshop-pill {
+  background-color: #1F1F23;
+  color: #FFFFFF;
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  letter-spacing: 0.24em;
+  padding: 0.25rem 0.75rem;
+  border-radius: 8px;
+  display: inline-block;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.build-log-h1 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 800;
+  font-size: 60px;
+  color: #16161A;
+  line-height: 1.1;
+  margin-bottom: 0.3rem;
+  letter-spacing: -0.02em;
+}
+
+.build-log-subtitle {
+  font-size: 18px;
+  color: #7A8BA0;
+  letter-spacing: 0.42em;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+}
+
+.meta-line {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: #7A8BA0;
+  margin-bottom: 2rem;
+}
+
+/* --- Layer Filter Toolbar (Card 01 Above) --- */
+.filter-toolbar-wrapper {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  scroll-margin-top: 20px;
+}
+
+.filter-toolbar-title {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: #7A8BA0;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.filter-buttons-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.filter-btn {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: #57606A;
+  background: #FFFFFF;
+  border: 1.5px solid #D0D7DE;
+  border-radius: 20px;
+  padding: 6px 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+.filter-btn:hover {
+  border-color: var(--rust-accent);
+  color: var(--rust-accent);
+}
+
+.filter-btn.active {
+  background-color: var(--rust-accent);
+  color: #FFFFFF;
+  border-color: var(--rust-accent);
+  font-weight: 600;
+}
+
+/* --- Build Log Cards --- */
+.bl-card {
+  background: #FFFFFF;
+  border: 1px solid #E4E9F0;
+  border-radius: 16px;
+  padding: 34px 36px;
+  margin-top: 30px;
+  box-shadow: 0 10px 28px rgba(50, 70, 100, 0.07);
+}
+
+.bl-card-header {
+  font-family: var(--font-mono);
+  font-size: 15.5px;
+  font-weight: 700;
+  color: #16161A;
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.bl-card-header .cn-sub {
+  color: #7A8BA0;
+  font-weight: 400;
+  font-size: 14px;
+  margin-left: 0.5rem;
+}
+
+/* Tags */
+.rust-tag {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  color: var(--rust-accent);
+  border: 1.5px dashed var(--rust-accent);
+  border-radius: 8px;
+  padding: 0.25rem 0.6rem;
+  margin-right: 0.4rem;
+  margin-bottom: 0.4rem;
+}
+
+/* Annotations */
+.bl-annotation {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--rust-accent);
+  margin-top: 1rem;
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+/* Card Content Styling */
+.bl-card p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #2E2A26;
+  margin-bottom: 1rem;
+}
+
+.bl-card p:last-child {
+  margin-bottom: 0;
+}
+
+.bl-card ul, .bl-card ol {
+  padding-left: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.bl-card li {
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.65;
+}
+
+/* Code block in Build Log */
+.bl-code {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  background-color: #FAFBFD;
+  border: 1.5px solid #E4E9F0;
+  border-radius: 9px;
+  padding: 12px 16px;
+  overflow-x: auto;
+  margin: 1rem 0;
+  line-height: 1.6;
+  color: #16161A;
+}
+
+/* Table in Build Log */
+.bl-table-wrapper {
+  overflow-x: auto;
+  margin: 1.25rem 0;
+}
+
+.bl-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  text-align: left;
+}
+
+.bl-table th {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: #7A8BA0;
+  border-bottom: 1px solid #E4E9F0;
+  padding: 8px 12px;
+  text-transform: uppercase;
+}
+
+.bl-table td {
+  border-bottom: 1px solid #F0F4F8;
+  padding: 10px 12px;
+  line-height: 1.5;
+}
+
+.bl-footer {
+  margin-top: 4rem;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: #7A8BA0;
+  padding-top: 2rem;
+  border-top: 1px solid #E4E9F0;
+}
+
+
+/* ==========================================================================
+   RESPONSIVE DESIGN (≤ 640px)
+   ========================================================================== */
+
+@media (max-width: 640px) {
+  .site-nav {
+    padding: 1rem 0.5rem;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .main-container, .build-log-container {
+    padding: 1.25rem 20px 4rem 20px;
+  }
+
+  .title-en {
+    font-size: 1.75rem;
+  }
+
+  .title-cn {
+    font-size: 1.15rem;
+  }
+
+  .entry-cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-card-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  /* Build Log Responsive Rules */
+  .build-log-h1 {
+    font-size: 42px;
+  }
+
+  .bl-card {
+    padding: 22px 20px;
+    border-radius: 12px;
+  }
+
+  .bl-table-wrapper {
+    overflow-x: auto;
+  }
 }

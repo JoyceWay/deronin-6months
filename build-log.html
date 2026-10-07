@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>建站手记 · DeRonin 六个月中文实战站</title>
+    <meta name="description" content="DeRonin 六个月 AI 工程师中文实战站建站全记录：prompt 档案、决策日志、踩坑实录与排版规范。">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="建站手记 · DeRonin 六个月中文实战站">
+    <meta property="og:description" content="DeRonin 六个月 AI 工程师中文实战站建站全记录：prompt 档案、决策日志、踩坑实录与排版规范。">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="og-cover.png">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="build-log-body">
+    <!-- Top Shared Navigation (Build-log specific transparent background + rust accent) -->
+    <nav class="site-nav" aria-label="Main Navigation">
+        <ul class="nav-list">
+            <li><a href="index.html" class="nav-link">首页 / Home</a></li>
+            <li><a href="guide.html" class="nav-link">指南 / Guide</a></li>
+            <li><a href="resources.html" class="nav-link">资料库 / Resources</a></li>
+            <li><a href="notes.html" class="nav-link">笔记本 / Notes</a></li>
+            <li><a href="build-log.html" class="nav-link active">建站手记 / Build Log</a></li>
+        </ul>
+    </nav>
+
+    <main class="build-log-container">
+        <!-- Header -->
+        <header class="build-log-header">
+            <div class="workshop-pill">WORKSHOP</div>
+            <h1 class="build-log-h1">BUILD LOG</h1>
+            <div class="build-log-subtitle">建站手记</div>
+            <div class="meta-line">PROMPT ARCHIVE & DECISION LOG · v2.0 COMPLETE</div>
+        </header>
+
+        <!-- Seven Layer Filter Toolbar (Card 01 Above) -->
+        <div id="filter-toolbar" class="filter-toolbar-wrapper">
+            <div class="filter-toolbar-title">七层筛选器 / Layer Filter Toolbar</div>
+            <div class="filter-buttons-row">
+                <button type="button" class="filter-btn active" data-layer-filter="all">全部</button>
+                <button type="button" class="filter-btn" data-layer-filter="01">01 原文</button>
+                <button type="button" class="filter-btn" data-layer-filter="02">02 为什么</button>
+                <button type="button" class="filter-btn" data-layer-filter="03">03 怎么来</button>
+                <button type="button" class="filter-btn" data-layer-filter="04">04 diff</button>
+                <button type="button" class="filter-btn" data-layer-filter="05">05 思维</button>
+                <button type="button" class="filter-btn" data-layer-filter="06">06 验证</button>
+                <button type="button" class="filter-btn" data-layer-filter="07">07 模式</button>
+            </div>
+        </div>
+
+        <!-- CARD 01: PROMPT ARCHIVE -->
+        <article class="bl-card" id="card-01">
+            <div class="bl-card-header">
+                <span>01 · PROMPT ARCHIVE <span class="cn-sub">档案</span></span>
+            </div>
+            <div class="tags-row">
+                <span class="rust-tag">v1-单页版 · 2026-10-05</span>
+                <span class="rust-tag">v2-五页版 · 2026-10-06</span>
+                <span class="rust-tag">v2-完整版 · 2026-10-07</span>
+            </div>
+
+            <div data-layer="01">
+                <p><strong>v1:</strong> 六个月内容装进一个页面。需求一次说全，AI 一次做对。原文已归档。</p>
+                <p><strong>v2:</strong> 五页——首页入口仪表盘；指南、资料库、笔记本、手记各一页。导航、配色、700px 阅读宽一次写死。</p>
+            </div>
+
+            <div data-layer="01 04">
+                <p><strong>v1→v2 diff:</strong> 单页→五页；新增五项顶部导航；首页四张入口卡片；纯静态无框架。</p>
+            </div>
+
+            <div data-layer="01">
+                <p><strong>v2完整版（2026-10-07）:</strong> 10-06 v2 prompt 原文未存档，本次完整重制；build-log 视觉锁定网格纸+白卡片，8 章内容一次写死。</p>
+            </div>
+
+            <span class="bl-annotation">↳ fig.02 — 七层存档：01原文 02为什么这样写 03怎么来的 04与上一版diff 05思维迭代 06效果验证（待真机） 07可复用模式（待真机）。</span>
+
+            <!-- Table: Seven Layer Explanation -->
+            <div data-layer="01" class="bl-table-wrapper">
+                <table class="bl-table">
+                    <thead>
+                        <tr>
+                            <th>层</th>
+                            <th>解释</th>
+                            <th>谁填</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>01</td>
+                            <td>prompt 全文存档——保证可复现</td>
+                            <td>Muse（先存档再粘贴）</td>
+                        </tr>
+                        <tr>
+                            <td>02</td>
+                            <td>关键决策的技术理由——下次同类问题直接抄</td>
+                            <td>Muse 从对话提炼</td>
+                        </tr>
+                        <tr>
+                            <td>03</td>
+                            <td>需求从聊天变成 prompt 的全过程——还原沟通路径</td>
+                            <td>Muse 整理</td>
+                        </tr>
+                        <tr>
+                            <td>04</td>
+                            <td>与上一版的差异——一眼看懂改了什么</td>
+                            <td>Muse 对比</td>
+                        </tr>
+                        <tr>
+                            <td>05</td>
+                            <td>Joyce 思维过程的迭代——记录认知升级</td>
+                            <td>Muse 提炼，Joyce 确认</td>
+                        </tr>
+                        <tr>
+                            <td>06</td>
+                            <td>AI 到底听懂了多少——对照清单打勾，跑偏项分类记坑</td>
+                            <td>真机用后 Muse 帮记</td>
+                        </tr>
+                        <tr>
+                            <td>07</td>
+                            <td>沉淀出的 prompt 技巧——下次写 prompt 直接抄</td>
+                            <td>Muse 提炼，真机后补充</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <span class="bl-annotation">↳ fig.06 — v2 完整版效果验证回填清单（网站生成后逐项打勾）：</span>
+            <div data-layer="06">
+                <ol>
+                    <li>5 页文件名全</li>
+                    <li>导航 5 项双语一致</li>
+                    <li>三色用对</li>
+                    <li>700px+双语标题</li>
+                    <li>footer 三件套</li>
+                    <li>三字体加载</li>
+                    <li>移动端 ≤640px</li>
+                    <li>4 卡片文案一字不差</li>
+                    <li>dashboard 六卡+深链</li>
+                    <li>24 周+23 必读+40 选读</li>
+                    <li>双向锚点通+外链新标签</li>
+                    <li>notes 月结构+24 空位</li>
+                    <li>build-log 视觉锁定+8 卡片一字不差</li>
+                    <li>SEO/OG 全</li>
+                </ol>
+                <p style="margin-top: 0.75rem;"><strong>记分：</strong>忠实执行 __/14，跑偏项记入 Card 04。</p>
+            </div>
+        </article>
+
+        <!-- CARD 02: ITERATION RATINGS -->
+        <article class="bl-card" id="card-02" data-layer="06">
+            <div class="bl-card-header">
+                <span>02 · ITERATION RATINGS <span class="cn-sub">迭代评级</span></span>
+            </div>
+            <span class="bl-annotation">↳ fig.03 — 三档通用，后续项目沿用。</span>
+            <ul>
+                <li>✅ <strong>好的：</strong>暖纸三色一次定死零返工；需求一次说全 v2 一次做对；方向评审前置。</li>
+                <li>➖ <strong>一般的：</strong>v2 提示词当时没存原文。教训：写完先存档。</li>
+                <li>❌ <strong>踩坑的：</strong>未验证"终端 bug"差点入库，已拦截。铁律：亲验才入库。</li>
+            </ul>
+        </article>
+
+        <!-- CARD 03: DECISION LOG -->
+        <article class="bl-card" id="card-03" data-layer="02">
+            <div class="bl-card-header">
+                <span>03 · DECISION LOG <span class="cn-sub">决策日志</span></span>
+            </div>
+            <span class="bl-annotation">↳ fig.04 — 每次为什么这样定，都有出处。</span>
+            <ul>
+                <li><strong>[2026-10-05] 暖纸三色 #FAF9F6 / #2E2A26 / #D4A853：</strong>第一版一次定死，零返工。</li>
+                <li><strong>[2026-10-05] 纯静态无框架：</strong>P0 动手作业，Joyce 亲手建仓库、看 diff、讲代码、commit/push、开 Pages。</li>
+                <li><strong>[2026-10-06] 五页结构：</strong>index / guide / resources / notes / build-log。</li>
+                <li><strong>[2026-10-06] 700px 阅读宽：</strong>长文舒适刚需；中文正文，英文术语首次配双语。</li>
+                <li><strong>[2026-10-06] 双语标题：</strong>英文大在上、中文小在下。</li>
+                <li><strong>[2026-10-07] 手记视觉锁定：</strong>六轮迭代对比多版，否决 Kindle 手写版（"不好看，乱"），锁定网格纸+白卡片 mockup。"保持这个，不要变了。"</li>
+                <li><strong>[2026-10-07] 内容策略反转：</strong>10-05 定的"学到哪章做哪章"改为"一次生成"。24 周内容一次写死。</li>
+                <li><strong>[2026-10-07] 必读/选读制：</strong>63 个资源链接全部分级，每周 1 个必读（深读），其余选读。</li>
+                <li><strong>[2026-10-07] 双向链接：</strong>resources Week N ↔ notes note-N 锚点互链；dashboard 深链到周。</li>
+                <li><strong>[2026-10-07] 笔记按月分类：</strong>M1–M6 月结构，月内按周；新心得以日期子条目追加。</li>
+                <li><strong>[2026-10-07] 手记页无输入框：</strong>纯静态站无后端，走正道不加。心得分工：Muse 总结，Joyce 选择和建议。</li>
+            </ul>
+        </article>
+
+        <!-- CARD 04: PITFALLS -->
+        <article class="bl-card" id="card-04" data-layer="06">
+            <div class="bl-card-header">
+                <span>04 · PITFALLS <span class="cn-sub">踩坑记录</span></span>
+            </div>
+            <span class="bl-annotation">↳ fig.05 — 本章铁律：Joyce 亲自验证过才能写。</span>
+            <ul>
+                <li><strong>未验证先写（已拦截）：</strong>验证过再加，不能有误导。</li>
+                <li><strong>v2 原文事后补档：</strong>写完先存档再庆祝（流程硬性步骤）。</li>
+                <li><strong>空着比错着强。</strong></li>
+            </ul>
+        </article>
+
+        <!-- CARD 05: COMMUNICATION -->
+        <article class="bl-card" id="card-05">
+            <div class="bl-card-header">
+                <span>05 · COMMUNICATION <span class="cn-sub">沟通迭代</span></span>
+            </div>
+            <span class="bl-annotation">↳ fig.06 — 聊天发散，prompt 收敛。</span>
+            
+            <div data-layer="07">
+                <p><strong>四条心法：</strong></p>
+                <ul>
+                    <li><strong>大方向先对齐：</strong>贵的东西动手前先评审方向。</li>
+                    <li><strong>需求一次说全：</strong>下单前把聊天里的要求收拢成清单。</li>
+                    <li><strong>带最小上下文：</strong>关键约束每次重申。</li>
+                    <li><strong>好坏都要存：</strong>这次好坏都记，下次直接用。</li>
+                </ul>
+            </div>
+
+            <div data-layer="03 05">
+                <p style="margin-top: 1rem;"><strong>复盘 10-05→10-07：</strong>v1 上线零返工 → v2 一次生成成功但原文丢失（教训变制度：先存档再庆祝）→ 视觉六轮迭代锁定 → 内容一次到位。</p>
+            </div>
+
+            <div data-layer="05">
+                <p><strong>质量来自三点：</strong>方向评审前置、结构内容定稿三步走、每个坑都长出一条规矩。</p>
+                <p style="margin-top: 0.75rem;"><strong>内容策略反转的取舍：</strong>原"学到哪做哪章"（验证前置，网站永远半成品）→ 现"一次生成"（网站先完整，验证后置到学习过程）。简介有原文出处，非编造。先完成再完美。</p>
+            </div>
+        </article>
+
+        <!-- CARD 06: DATA SCHEMA -->
+        <article class="bl-card" id="card-06" data-layer="06">
+            <div class="bl-card-header">
+                <span>06 · DATA SCHEMA <span class="cn-sub">数据字段</span></span>
+            </div>
+            <span class="bl-annotation">↳ fig.07 — 先有真问题，再加字段。</span>
+            <p>总用时 / 迭代次数 / AI 沟通次数 / 一次通过率（prompt 质量硬指标） / 返工次数 / 好一般坑计数 / 上线后缺陷数 / 新概念数。</p>
+        </article>
+
+        <!-- CARD 07: TYPOGRAPHY SPEC -->
+        <article class="bl-card" id="card-07" data-layer="07">
+            <div class="bl-card-header">
+                <span>07 · TYPOGRAPHY SPEC <span class="cn-sub">排版规范</span></span>
+            </div>
+            <span class="bl-annotation">↳ fig.08 — 这是招牌，终身适用。</span>
+            <p>三色 #FAF9F6 / #2E2A26 / #D4A853；阅读宽 700px；双语标题英上中下；中文正文短句；克制留白；数字承诺用数字，收集用圆点，流程用箭头。</p>
+            <p style="margin-top: 0.5rem;"><strong>注：</strong>手记页用网格纸+白卡片，和主站暖纸风刻意区分。</p>
+        </article>
+
+        <!-- CARD 08: CHANGELOG -->
+        <article class="bl-card" id="card-08" data-layer="04">
+            <div class="bl-card-header">
+                <span>08 · CHANGELOG <span class="cn-sub">标准变更日志</span></span>
+            </div>
+            <span class="bl-annotation">↳ fig.09 — 规矩怎么变的，都有档。</span>
+            <ul>
+                <li><strong>2026-10-05：</strong>暖纸三色定死；v1 单页版 prompt 定稿；P0 动手制确立。</li>
+                <li><strong>2026-10-06：</strong>双语标题制式 + 700px + 五页导航；v2 五页版 prompt 定稿（原文未存档，丢失）；晚定五页框架。</li>
+                <li><strong>2026-10-07：</strong>8 章法定稿；七层存档法确立；"未验证不入库"铁律；手记视觉六轮迭代锁定。</li>
+                <li><strong>2026-10-07：</strong>v2 完整版 prompt 重制（一贴即用）；2–4 页内容一次到位（guide 全文 + 24 周 + notes 开篇）。</li>
+                <li><strong>2026-10-07：</strong>必读/选读制（23 必读 + 40 选读）；双向链接架构；笔记按月分类；SEO/OG 与发布前补齐（footer、移动端、字体栈）。</li>
+            </ul>
+        </article>
+
+        <!-- Footer -->
+        <footer class="bl-footer">
+            fig.10 本页完. 06 效果验证 / 07 可复用模式 —— 等真机用过网站后补。
+        </footer>
+    </main>
+
+    <!-- Embedded JS for Layer Filter Toolbar Interaction -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var buttons = document.querySelectorAll('.filter-btn');
+        var cards = document.querySelectorAll('.bl-card');
+        var layerElements = document.querySelectorAll('[data-layer]');
+        var toolbar = document.getElementById('filter-toolbar');
+
+        // 1. Calculate layer element counts dynamically
+        var counts = {};
+        layerElements.forEach(function (el) {
+            var layers = el.getAttribute('data-layer').split(' ');
+            layers.forEach(function (l) {
+                if (l) counts[l] = (counts[l] || 0) + 1;
+            });
+        });
+
+        // Also check card-level data-layer
+        cards.forEach(function (card) {
+            var cardLayers = card.getAttribute('data-layer');
+            if (cardLayers) {
+                cardLayers.split(' ').forEach(function (l) {
+                    if (l && !counts[l]) counts[l] = 1;
+                });
+            }
+        });
+
+        // Append counts to button text
+        buttons.forEach(function (btn) {
+            var filter = btn.getAttribute('data-layer-filter');
+            if (filter !== 'all' && counts[filter]) {
+                var layerNames = {
+                    '01': '01 原文', '02': '02 为什么', '03': '03 怎么来',
+                    '04': '04 diff', '05': '05 思维', '06': '06 验证', '07': '07 模式'
+                };
+                btn.textContent = layerNames[filter] + ' · ' + counts[filter];
+            }
+        });
+
+        // 2. Filter Button Click Handler
+        buttons.forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                var selected = this.getAttribute('data-layer-filter');
+
+                // Update active state on buttons
+                buttons.forEach(function (b) { b.classList.remove('active'); });
+                this.classList.add('active');
+
+                if (selected === 'all') {
+                    // Show all cards & layer elements
+                    cards.forEach(function (c) { c.style.display = ''; });
+                    layerElements.forEach(function (el) { el.style.display = ''; });
+                } else {
+                    // Filter elements
+                    layerElements.forEach(function (el) {
+                        var layers = el.getAttribute('data-layer').split(' ');
+                        if (layers.includes(selected)) {
+                            el.style.display = '';
+                        } else {
+                            el.style.display = 'none';
+                        }
+                    });
+
+                    // Update cards visibility
+                    cards.forEach(function (card) {
+                        var cardLayerAttr = card.getAttribute('data-layer');
+                        var cardLayers = cardLayerAttr ? cardLayerAttr.split(' ') : [];
+                        
+                        // Check if card itself matches or has visible children
+                        var hasMatchingChild = false;
+                        var children = card.querySelectorAll('[data-layer]');
+                        children.forEach(function (ch) {
+                            var chLayers = ch.getAttribute('data-layer').split(' ');
+                            if (chLayers.includes(selected)) {
+                                hasMatchingChild = true;
+                            }
+                        });
+
+                        if (cardLayers.includes(selected) || hasMatchingChild) {
+                            card.style.display = '';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                }
+
+                // Smooth scroll back to toolbar
+                if (toolbar) {
+                    toolbar.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    });
+    </script>
+</body>
+</html>

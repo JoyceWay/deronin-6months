@@ -3,195 +3,162 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>6 个月，成为 AI 工程师 · Become an AI Engineer in 6 Months</title>
-    <meta name="description" content="6 个月，成为 AI 工程师 - 中战实打路线图与项目指南。Become an AI Engineer in 6 Months: a hands-on learning hub based on DeRonin's roadmap.">
+    <title>首页 · 6 个月，成为 AI 工程师 — DeRonin 六个月中文实战站</title>
+    <meta name="description" content="DeRonin《6 个月成为 AI Engineer》路线图的中文实战站。从零开始的 6 个月 AI 工程师路线图与 24 周实战打卡。">
     
-    <!-- Google Fonts: Noto Serif SC -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="首页 · 6 个月，成为 AI 工程师 — DeRonin 六个月中文实战站">
+    <meta property="og:description" content="DeRonin《6 个月成为 AI Engineer》路线图的中文实战站。从零开始的 6 个月 AI 工程师路线图与 24 周实战打卡。">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="og-cover.png">
+
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <!-- Top Credit Link -->
-        <div class="top-credit">
-            <a href="https://x.com/DeRonin_/status/2033587293064204349" target="_blank" rel="noopener noreferrer" class="credit-link">
+    <!-- Top Shared Navigation -->
+    <nav class="site-nav" aria-label="Main Navigation">
+        <ul class="nav-list">
+            <li><a href="index.html" class="nav-link active">首页 / Home</a></li>
+            <li><a href="guide.html" class="nav-link">指南 / Guide</a></li>
+            <li><a href="resources.html" class="nav-link">资料库 / Resources</a></li>
+            <li><a href="notes.html" class="nav-link">笔记本 / Notes</a></li>
+            <li><a href="build-log.html" class="nav-link">建站手记 / Build Log</a></li>
+        </ul>
+    </nav>
+
+    <main class="main-container">
+        <!-- Top Source Credit -->
+        <div class="top-credit-bar">
+            <a href="https://x.com/DeRonin_/status/2033587293064204349" target="_blank" rel="noopener noreferrer" class="credit-badge">
                 原文来自 DeRonin_ · Original by DeRonin_
             </a>
         </div>
 
         <!-- Header -->
-        <header class="site-header">
-            <h1 class="site-title">6 个月，成为 AI 工程师</h1>
-            <p class="site-subtitle">Become an AI Engineer in 6 Months</p>
+        <header class="page-header">
+            <h1 class="page-title">
+                <span class="title-en">Become an AI Engineer in 6 Months</span>
+                <span class="title-cn">6 个月，成为 AI 工程师</span>
+            </h1>
+            <hr class="header-divider">
         </header>
 
-        <!-- Divider -->
-        <hr class="gold-divider">
-
-        <!-- Intro Section -->
-        <section class="intro-section">
-            <p class="intro-text-cn">
-                本站将 DeRonin 的 AI 工程师路线图转化为一份面向实战的中文学习指南；每月均配有一个手脑并用的里程碑项目——重在动手建造，而非仅仅阅读。
-            </p>
-            <p class="intro-text-en">
-                This site converts DeRonin's roadmap into a hands-on Chinese study plan. Each month culminates in a real milestone project — build it, don't just read it.
-            </p>
+        <!-- 4 Entry Cards -->
+        <section class="entry-cards-grid" aria-label="Quick Access">
+            <a href="guide.html" class="entry-card">
+                <div class="entry-card-title">指南 <span class="en-sub">/ Guide</span></div>
+                <div class="entry-card-desc">从这里开始：学习路线与使用说明</div>
+            </a>
+            <a href="resources.html" class="entry-card">
+                <div class="entry-card-title">资料库 <span class="en-sub">/ Resources</span></div>
+                <div class="entry-card-desc">M1–M6 · 24 周：每章配套的学习资料</div>
+            </a>
+            <a href="notes.html" class="entry-card">
+                <div class="entry-card-title">笔记本 <span class="en-sub">/ Notes</span></div>
+                <div class="entry-card-desc">学习笔记：按周更新，学到哪记到哪</div>
+            </a>
+            <a href="build-log.html" class="entry-card">
+                <div class="entry-card-title">建站手记 <span class="en-sub">/ Build Log</span></div>
+                <div class="entry-card-desc">建站全记录：prompt 档案、决策日志、踩坑实录</div>
+            </a>
         </section>
 
-        <!-- Month Cards List -->
-        <main class="month-list">
-            <!-- M1 -->
-            <article class="month-card">
-                <div class="card-top">
-                    <span class="month-label">M1 · 第一个月</span>
-                    <span class="status-tag status-in-progress">学习中 · In progress</span>
-                </div>
-                <h2 class="card-title">
-                    <span class="title-cn">代码功底</span>
-                    <span class="title-sep">/</span>
-                    <span class="title-en">Coding Foundations</span>
-                </h2>
-                <ul class="topic-list">
-                    <li><span class="topic-cn">Python 基础</span> <span class="topic-sep">/</span> <span class="topic-en">Python basics</span></li>
-                    <li><span class="topic-cn">Git 与 GitHub</span> <span class="topic-sep">/</span> <span class="topic-en">Git & GitHub</span></li>
-                    <li><span class="topic-cn">命令行</span> <span class="topic-sep">/</span> <span class="topic-en">CLI basics</span></li>
-                    <li><span class="topic-cn">API、JSON 与异步</span> <span class="topic-sep">/</span> <span class="topic-en">APIs, JSON, async basics</span></li>
-                </ul>
-                <div class="milestone-box">
-                    <span class="milestone-tag">里程碑项目 Milestone:</span>
-                    <span class="milestone-desc-cn">用 Python + FastAPI 做一个能跑的小项目</span>
-                    <span class="milestone-desc-en">Build a working project with Python + FastAPI</span>
-                </div>
-            </article>
+        <!-- Progress Dashboard (M1 - M6) -->
+        <section class="dashboard-section" aria-label="Learning Progress Dashboard">
+            <h2 class="section-title">学习进度仪表盘 / Progress Dashboard</h2>
+            <div class="dashboard-grid">
+                <!-- M1 -->
+                <article class="dashboard-card">
+                    <div class="dashboard-card-header">
+                        <span class="month-label-badge">M1 · 第 1 个月</span>
+                        <span class="status-badge in-progress">学习中 · In Progress</span>
+                    </div>
+                    <div class="dashboard-theme">代码基本功 (Coding Foundations)</div>
+                    <div class="dashboard-links">
+                        <a href="resources.html#m1">查看 M1 资料库 →</a>
+                        <a href="notes.html#note-1">查看第 1 周笔记 →</a>
+                    </div>
+                </article>
 
-            <!-- M2 -->
-            <article class="month-card">
-                <div class="card-top">
-                    <span class="month-label">M2 · 第二个月</span>
-                    <span class="status-tag status-planned">准备中 · Planned</span>
-                </div>
-                <h2 class="card-title">
-                    <span class="title-cn">玩转大模型</span>
-                    <span class="title-sep">/</span>
-                    <span class="title-en">LLM App Development</span>
-                </h2>
-                <ul class="topic-list">
-                    <li><span class="topic-cn">Prompt 基础</span> <span class="topic-sep">/</span> <span class="topic-en">Prompting fundamentals</span></li>
-                    <li><span class="topic-cn">结构化输出</span> <span class="topic-sep">/</span> <span class="topic-en">Structured outputs</span></li>
-                    <li><span class="topic-cn">工具调用</span> <span class="topic-sep">/</span> <span class="topic-en">Tool calling</span></li>
-                    <li><span class="topic-cn">成本、延迟与 Token</span> <span class="topic-sep">/</span> <span class="topic-en">Cost, latency & tokens</span></li>
-                </ul>
-                <div class="milestone-box">
-                    <span class="milestone-tag">里程碑项目 Milestone:</span>
-                    <span class="milestone-desc-cn">做一个带工具调用的对话应用</span>
-                    <span class="milestone-desc-en">Build a conversational app with tool calling</span>
-                </div>
-            </article>
+                <!-- M2 -->
+                <article class="dashboard-card">
+                    <div class="dashboard-card-header">
+                        <span class="month-label-badge">M2 · 第 2 个月</span>
+                        <span class="status-badge planned">未开始 · Planned</span>
+                    </div>
+                    <div class="dashboard-theme">LLM 应用开发 (LLM App Development)</div>
+                    <div class="dashboard-links">
+                        <a href="resources.html#m2">查看 M2 资料库 →</a>
+                        <a href="notes.html#note-5">查看第 5 周笔记 →</a>
+                    </div>
+                </article>
 
-            <!-- M3 -->
-            <article class="month-card">
-                <div class="card-top">
-                    <span class="month-label">M3 · 第三个月</span>
-                    <span class="status-tag status-planned">准备中 · Planned</span>
-                </div>
-                <h2 class="card-title">
-                    <span class="title-cn">RAG</span>
-                    <span class="title-sep">/</span>
-                    <span class="title-en">Retrieval-Augmented Generation</span>
-                </h2>
-                <ul class="topic-list">
-                    <li><span class="topic-cn">Embeddings 与切分</span> <span class="topic-sep">/</span> <span class="topic-en">Embeddings & chunking</span></li>
-                    <li><span class="topic-cn">向量数据库</span> <span class="topic-sep">/</span> <span class="topic-en">Vector databases</span></li>
-                    <li><span class="topic-cn">排序与重排</span> <span class="topic-sep">/</span> <span class="topic-en">Reranking</span></li>
-                    <li><span class="topic-cn">减少幻觉</span> <span class="topic-sep">/</span> <span class="topic-en">Hallucination reduction</span></li>
-                </ul>
-                <div class="milestone-box">
-                    <span class="milestone-tag">里程碑项目 Milestone:</span>
-                    <span class="milestone-desc-cn">给自己的文档做一个问答机器人</span>
-                    <span class="milestone-desc-en">Build a Q&A chatbot for your own documents</span>
-                </div>
-            </article>
+                <!-- M3 -->
+                <article class="dashboard-card">
+                    <div class="dashboard-card-header">
+                        <span class="month-label-badge">M3 · 第 3 个月</span>
+                        <span class="status-badge planned">未开始 · Planned</span>
+                    </div>
+                    <div class="dashboard-theme">真正掌握 RAG (Retrieval-Augmented Generation)</div>
+                    <div class="dashboard-links">
+                        <a href="resources.html#m3">查看 M3 资料库 →</a>
+                        <a href="notes.html#note-9">查看第 9 周笔记 →</a>
+                    </div>
+                </article>
 
-            <!-- M4 -->
-            <article class="month-card">
-                <div class="card-top">
-                    <span class="month-label">M4 · 第四个月</span>
-                    <span class="status-tag status-planned">准备中 · Planned</span>
-                </div>
-                <h2 class="card-title">
-                    <span class="title-cn">智能体</span>
-                    <span class="title-sep">/</span>
-                    <span class="title-en">Agents & Workflows</span>
-                </h2>
-                <ul class="topic-list">
-                    <li><span class="topic-cn">Agent 循环</span> <span class="topic-sep">/</span> <span class="topic-en">Agent loops</span></li>
-                    <li><span class="topic-cn">工具选择与状态管理</span> <span class="topic-sep">/</span> <span class="topic-en">Tool selection & state</span></li>
-                    <li><span class="topic-cn">何时不用 Agent</span> <span class="topic-sep">/</span> <span class="topic-en">When NOT to use agents</span></li>
-                    <li><span class="topic-cn">评估与成功指标</span> <span class="topic-sep">/</span> <span class="topic-en">Evals & success metrics</span></li>
-                </ul>
-                <div class="milestone-box">
-                    <span class="milestone-tag">里程碑项目 Milestone:</span>
-                    <span class="milestone-desc-cn">做一个能完成多步任务的智能体</span>
-                    <span class="milestone-desc-en">Build an agent capable of executing multi-step tasks</span>
-                </div>
-            </article>
+                <!-- M4 -->
+                <article class="dashboard-card">
+                    <div class="dashboard-card-header">
+                        <span class="month-label-badge">M4 · 第 4 个月</span>
+                        <span class="status-badge planned">未开始 · Planned</span>
+                    </div>
+                    <div class="dashboard-theme">Agent 与评测 (Agents & Workflows)</div>
+                    <div class="dashboard-links">
+                        <a href="resources.html#m4">查看 M4 资料库 →</a>
+                        <a href="notes.html#note-13">查看第 13 周笔记 →</a>
+                    </div>
+                </article>
 
-            <!-- M5 -->
-            <article class="month-card">
-                <div class="card-top">
-                    <span class="month-label">M5 · 第五个月</span>
-                    <span class="status-tag status-planned">准备中 · Planned</span>
-                </div>
-                <h2 class="card-title">
-                    <span class="title-cn">部署上线</span>
-                    <span class="title-sep">/</span>
-                    <span class="title-en">Deployment & Reliability</span>
-                </h2>
-                <ul class="topic-list">
-                    <li><span class="topic-cn">Docker 打包</span> <span class="topic-sep">/</span> <span class="topic-en">Docker</span></li>
-                    <li><span class="topic-cn">日志与可观测</span> <span class="topic-sep">/</span> <span class="topic-en">Logging & observability</span></li>
-                    <li><span class="topic-cn">认证与 API Key 安全</span> <span class="topic-sep">/</span> <span class="topic-en">Auth & API key security</span></li>
-                    <li><span class="topic-cn">成本监控</span> <span class="topic-sep">/</span> <span class="topic-en">Cost monitoring</span></li>
-                </ul>
-                <div class="milestone-box">
-                    <span class="milestone-tag">里程碑项目 Milestone:</span>
-                    <span class="milestone-desc-cn">把 M4 的智能体部署成在线服务</span>
-                    <span class="milestone-desc-en">Deploy the M4 agent into a live online service</span>
-                </div>
-            </article>
+                <!-- M5 -->
+                <article class="dashboard-card">
+                    <div class="dashboard-card-header">
+                        <span class="month-label-badge">M5 · 第 5 个月</span>
+                        <span class="status-badge planned">未开始 · Planned</span>
+                    </div>
+                    <div class="dashboard-theme">部署上线与系统可靠性 (Deployment & Reliability)</div>
+                    <div class="dashboard-links">
+                        <a href="resources.html#m5">查看 M5 资料库 →</a>
+                        <a href="notes.html#note-17">查看第 17 周笔记 →</a>
+                    </div>
+                </article>
 
-            <!-- M6 -->
-            <article class="month-card">
-                <div class="card-top">
-                    <span class="month-label">M6 · 第六个月</span>
-                    <span class="status-tag status-planned">准备中 · Planned</span>
-                </div>
-                <h2 class="card-title">
-                    <span class="title-cn">选方向</span>
-                    <span class="title-sep">/</span>
-                    <span class="title-en">Specialize</span>
-                </h2>
-                <ul class="topic-list">
-                    <li><span class="topic-cn">端到端做产品</span> <span class="topic-sep">/</span> <span class="topic-en">End-to-end product building</span></li>
-                    <li><span class="topic-cn">AI 产品体验</span> <span class="topic-sep">/</span> <span class="topic-en">Product UX for AI</span></li>
-                    <li><span class="topic-cn">微调 vs Prompt 工程</span> <span class="topic-sep">/</span> <span class="topic-en">Fine-tuning vs prompting</span></li>
-                    <li><span class="topic-cn">开源模型</span> <span class="topic-sep">/</span> <span class="topic-en">Open-source models</span></li>
-                </ul>
-                <div class="milestone-box">
-                    <span class="milestone-tag">里程碑项目 Milestone:</span>
-                    <span class="milestone-desc-cn">选一个方向，做出能给人看的作品</span>
-                    <span class="milestone-desc-en">Pick a specialization and build a showcase-ready project</span>
-                </div>
-            </article>
-        </main>
+                <!-- M6 -->
+                <article class="dashboard-card">
+                    <div class="dashboard-card-header">
+                        <span class="month-label-badge">M6 · 第 6 个月</span>
+                        <span class="status-badge planned">未开始 · Planned</span>
+                    </div>
+                    <div class="dashboard-theme">选方向，成为能上场的人 (Specialize)</div>
+                    <div class="dashboard-links">
+                        <a href="resources.html#m6">查看 M6 资料库 →</a>
+                        <a href="notes.html#note-21">查看第 21 周笔记 →</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
 
-        <!-- Footer -->
-        <footer class="site-footer">
-            <p class="footer-text">学习中 · Work in progress — 学到哪章，更新到哪章。</p>
-        </footer>
-    </div>
+    <!-- Shared Slim Footer -->
+    <footer class="site-footer">
+        <p class="footer-line-1">学习中 · Work in progress — 学到哪章，更新到哪章。</p>
+        <div class="footer-line-2">
+            <a href="index.html">首页 / Home</a> ·
+            <a href="guide.html">指南 / Guide</a> ·
+            <a href="resources.html">资料库 / Resources</a> ·
+            <a href="notes.html">笔记本 / Notes</a> ·
+            <a href="build-log.html">建站手记 / Build Log</a> ·
+            <a href="https://x.com/DeRonin_/status/2033587293064204349" target="_blank" rel="noopener noreferrer">DeRonin_ 原文 ↗</a>
+        </div>
+    </footer>
 </body>
 </html>

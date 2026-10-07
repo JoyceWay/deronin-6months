@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>资料库 · 24 周 — DeRonin 六个月中文实战站</title>
+    <meta name="description" content="DeRonin 六个月 AI 工程师路线图配套的 24 周学习资料库，涵盖必读与选读资源及每周动手任务。">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="资料库 · 24 周 — DeRonin 六个月中文实战站">
+    <meta property="og:description" content="DeRonin 六个月 AI 工程师路线图配套的 24 周学习资料库，涵盖必读与选读资源及每周动手任务。">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="og-cover.png">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Top Shared Navigation -->
+    <nav class="site-nav" aria-label="Main Navigation">
+        <ul class="nav-list">
+            <li><a href="index.html" class="nav-link">首页 / Home</a></li>
+            <li><a href="guide.html" class="nav-link">指南 / Guide</a></li>
+            <li><a href="resources.html" class="nav-link active">资料库 / Resources</a></li>
+            <li><a href="notes.html" class="nav-link">笔记本 / Notes</a></li>
+            <li><a href="build-log.html" class="nav-link">建站手记 / Build Log</a></li>
+        </ul>
+    </nav>
+
+    <main class="main-container">
+        <!-- Top Source Credit -->
+        <div class="top-credit-bar">
+            <a href="https://x.com/DeRonin_/status/2033587293064204349" target="_blank" rel="noopener noreferrer" class="credit-badge">
+                原文来自 DeRonin_ · Original by DeRonin_
+            </a>
+        </div>
+
+        <!-- Header -->
+        <header class="page-header">
+            <h1 class="page-title">
+                <span class="title-en">Learning Resources · 24 Weeks</span>
+                <span class="title-cn">资料库</span>
+            </h1>
+            <hr class="header-divider">
+        </header>
+
+        <!-- Top M1-M6 Anchor Jump Navigation -->
+        <nav class="resources-anchor-nav" aria-label="Month Navigation">
+            <a href="#m1">M1 · 代码基本功</a>
+            <a href="#m2">M2 · LLM 应用开发</a>
+            <a href="#m3">M3 · RAG</a>
+            <a href="#m4">M4 · Agent 与评测</a>
+            <a href="#m5">M5 · 部署与可靠性</a>
+            <a href="#m6">M6 · 选方向</a>
+        </nav>
+
+        <!-- MONTH 1 -->
+        <section id="m1" class="month-block">
+            <h2 class="month-block-title">M1：代码基本功</h2>
+
+            <!-- Week 1 -->
+            <article id="week-1" class="week-card">
+                <h3 class="week-title">Week 1 · Python</h3>
+                <ul class="resource-list">
+                    <li class="resource-item"><span class="tag-required">[必读]</span> <a href="https://cs50.harvard.edu/python/" target="_blank" rel="noopener noreferrer">CS50P：哈佛 Python 入门</a> —— 哈佛的 Python 入门课</li>
+                    <li class="resource-item"><span class="tag-optional">[选读]</span> <a href="https://www.coursera.org/specializations/python" target="_blank" rel="noopener noreferrer">Python for Everybody（Coursera，可免费旁听）</a> —— 零基础友好的 Python 入门课</li>
+                    <li class="resource-item"><span class="tag-optional">[选读]</span> <a href="https://docs.python.org/3/tutorial/" target="_blank" rel="noopener noreferrer">Python 官方教程</a> —— 查漏补缺的手册</li>
+                </ul>
+                <div class="task-box">
+                    <span class="task-label">动手：</span>写一个 CLI 小工具（记账本/天气查询），数据存 JSON 文件
+                </div>
+                <a href="notes.html#note-1" class="week-note-link">我的笔记 →</a>
+            </article>
+
+            <!-- Week 2 -->
+            <article id="week-2" class="week-card">
+                <h3 class="week-title">Week 2 · Git 与终端</h3>
+                <ul class="resource-list">
+                    <li class="resource-item"><span class="tag-required">[必读]</span> <a href="https://learngitbranching.js.org/" target="_blank" rel="noopener noreferrer">Learn Git Branching</a> —— 可视化练分支，半小时上手</li>
+                    <li class="resource-item"><span class="tag-optional">[选读]</span> <a href="https://git-scm.com/book/en/v2" target="_blank" rel="noopener noreferrer">Pro Git（免费书）</a> —— Git 权威指南</li>
+                    <li class="resource-item"><span class="tag-optional">[选读]</span> <a href="https://missing.csail.mit.edu/" target="_blank" rel="noopener noreferrer">MIT Missing Semester</a> —— 终端与工具链，CS 必修课</li>
+                </ul>
+                <div class="task-box">
+                    <span class="task-label">动手：</span>每个项目都建 GitHub 仓库，从第一天养成习惯
+                </div>
+                <a href="notes.html#note-2" class="week-note-link">我的笔记 →</a>
+            </article>
+
+            <!-- Week 3 -->
+            <article id="week-3" class="week-card">
+                <h3 class="week-title">Week 3 · JSON / API / HTTP / 异步</h3>
+                <ul class="resource-list">
+                    <li class="resource-item"><span class="tag-required">[必读]</span> <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview" target="_blank" rel="noopener noreferrer">MDN：HTTP 概述</a> —— 先搞懂 GET/POST 和状态码</li>
+                    <li class="resource-item"><span class="tag-optional">[选读]</span> <a href="https://requests.readthedocs.io/en/latest/" target="_blank" rel="noopener noreferrer">requests 官方文档</a> —— Python 发请求就用它</li>
+                    <li class="resource-item"><span class="tag-optional">[选读]</span> <a href="https://realpython.com/async-io-python/" target="_blank" rel="noopener noreferrer">Real Python：async/await</a> —— 异步一次讲透</li>
+                </ul>
+                <div class="task-box">
+                    <span class="task-label">动手：</span>调用免费的 Open-Meteo 天气 API，把返回的 JSON 整理干净
+                </div>
+                <a href="notes.html#note-3" class="week-note-link">我的笔记 →</a>
+            </article>
+
+            <!-- Week 4 -->
+            <article id="week-4" class="week-card">
+                <h3 class="week-title">Week 4 · SQL / Pandas / FastAPI</h3>
+                <ul class="resource-list">
+                    <li class="resource-item"><span class="tag-required">[必读]</span> <a href="https://fastapi.tiangolo.com/tutorial/" target="_blank" rel="noopener noreferrer">FastAPI 官方教程</a> —— 半天搭出第一个 API</li>
+                    <li class="resource-item"><span class="tag-optional">[选读]</span> <a href="https://sqlbolt.com/" target="_blank" rel="noopener noreferrer">SQLBolt</a> —— 交互式学 SQL，边练边学</li>
+                    <li class="resource-item"><span class="tag-optional">[选读]</span> <a href="https://www.kaggle.com/learn/pandas" target="_blank" rel="noopener noreferrer">Kaggle Pandas 课程</a> —— 数据处理上手最快</li>
+                </ul>
+                <div class="task-box">
+                    <span class="task-label">动手：</span>跑通一个 FastAPI 应用，浏览器打开 /docs 玩一圈
+                </div>
+                <a href="notes.html#note-4" class="week-note-link">我的笔记 →</a>
+            </article>
+        </section>
+
+        <!-- MONTH 2 -->
+        <section id="m2" class="month-block">
+            <h2 class="month-block-title">M2：LLM 应用开发</h2>
+
+            <!-- Week 5 -->
+            <article id="week-5" class="week-card">
+                <h3 class="week-title">Week 5 · 提示词基本功</h3>
+                <ul class="resource-list">
+                    <li class="resource-item"><span class="tag-required">[必读]</span> <a href="https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview" target="_blank" rel="noopener noreferrer">Anthropic 提示词工程文档</a> —— 官方指南，先看它</li>
+                    <li class="resource-item"><span class="tag-optional">[选读]</span> <a href="https://platform.openai.com/docs/guides/prompt-engineering" target="_blank" rel="noopener noreferrer">OpenAI 提示词指南</a> —— 对照看两家的思路差异</li>
+                    <li class="resource-item"><span class="tag-optional">[选读]</span> <a href="https://www.promptingguide.ai/" target="_blank" rel="noopener noreferrer">PromptingGuide.ai</a> —— 提示词技巧的百科全书</li>
+                </ul>
+                <div class="task-box">
+                    <span class="task-label">动手：</span>为同一个真实任务写 5 版提示词，对比输出差异
+                </div>
+                <a href="notes.html#note-5" class="week-note-link">我的笔记 →</a>
+            </article>
+
+            <!-- Week 6 -->
+            <article id="week-6" class="week-card">
+                <h3 class="week-title">Week 6 · 结构化输出 + 工具调用</h3>
+                <ul class="resource-list">
+                    <li class="resource-item"><span class="tag-required">[必读]</span> <a href="https://docs.anthropic.com/en/docs/build-with-claude/tool-use" target="_blank" rel="noopener noreferrer">Anthropic Tool Use 文档</a> —— 工具调用官方指南</li>
+                    <li class="resource-item"><span class="tag-optional">[选读]</span> <a href="https://platform.openai.com/docs/guides/structured-outputs" target="_blank" rel="noopener noreferrer">OpenAI Structured Outputs 指南</a> —— 让模型稳定吐 JSON</li>
+                    <li class="resource-item"><span class="tag-optional">[选读]</span> <a href="https://python.useinstructor.com/" target="_blank" rel="noopener noreferrer">Instructor</a> —— Pydantic 结构化输出神器</li>
+                </ul>
+                <div class="task-box">
+                    <span class="task-label">动手：</span>做一个发票解析器，返回结构化的 Python 对象
+                </div>
+                <a href="notes.html#note-6" class="week-note-link">我的笔记 →</a>
+            </article>
+
+            <!-- Week 7 -->
+            <article id="week-7" class="week-card">
+                <h3 class="week-title">Week 7 · 流式输出 + 对话状态</h3>
+                <ul class="resource-list">
+                    <li class="resource-item"><span class="tag-required">[必读]</span> <a href="https://til.simonwillison.net/llms/streaming-llm-apis" target="_blank" rel="noopener noreferrer">Simon Willison：流式 LLM API 原理</a> —— 流式讲得最透的一篇</li>
+                    <li class="resource-item"><span class="tag-optional">[选读]</span> <a href="https://docs.anthropic.com/en/api/messages-streaming" target="_blank" rel="noopener noreferrer">Anthropic Streaming 文档</a> —— 官方流式接口文档</li>
+                    <li class="resource-item"><span class="tag-optional">[选读]</span> <a href="https://platform.openai.com/docs/guides/conversation-state" target="_blank" rel="noopener noreferrer">OpenAI 对话状态管理</a> —— 多轮对话的上下文怎么存</li>
+                </ul>
+                <div class="task-box">
+                    <span class="task-label">动手：</span>写一个终端多轮聊天机器人，带 /reset 和每轮 token 计数
+                </div>
+                <a href="notes.html#note-7" class="week-note-link">我的笔记 →</a>
+            </article>
+
+            <!-- Week 8 -->
+            <article id="week-8" class="week-card">
+                <h3 class="week-title">Week 8 · 成本 / 延迟 / 失败处理 / 注入防御</h3>
+                <ul class="resource-list">
+                    <li class="resource-item"><span class="tag-required">[必读]</span> <a href="https://genai.owasp.org/llmrisk/llm01-prompt-injection/" target="_blank" rel="noopener noreferrer">OWASP LLM01：提示词注入</a> —— 安全风险必读</li>
+                    <li class="resource-item"><span class="tag-optional">[选读]</span> <a href="https://platform.openai.com/tokenizer" target="_blank" rel="noopener noreferrer">OpenAI Tokenizer</a> —— 花钱之前先算 token</li>
+                    <li class="resource-item"><span class="tag-optional">[选读]</span> <a href="https://tenacity.readthedocs.io/" target="_blank" rel="noopener noreferrer">Tenacity</a> —— 重试退避，失败处理的标配库</li>
+                </ul>
+                <div class="task-box">
+                    <span class="task-label">动手：</span>给你的应用加上重试、超时和降级，别让一次坏输出搞崩全场
+                </div>
+                <a href="notes.html#note-8" class="week-note-link">我的笔记 →</a>
+            </article>
+        </section>
+
+        <!-- MONTH 3 -->
+        <section id="m3" class="month-block">
+            <h2 class="month-block-title">M3：RAG</h2>
+
+            <!-- Week 9 -->
+            <article id="week-9" class="week-card">
+                <h3 class="week-title">Week 9 · Embeddings + 切块</h3>
+                <ul class="resource-list">
+                    <li class="resource-item"><span class="tag-required">[必读]</span> <a href="https://weaviate.io/blog/chunking-strategies-for-rag" target="_blank" rel="noopener noreferrer">Weaviate：RAG 切块策略</a> —— 切块是 RAG 的隐形胜负手</li>
+                    <li class="resource-item"><span class="tag-optional">[选读]</span> <a href="https://stackoverflow.blog/2023/11/09/an-intuitive-introduction-to-text-embeddings/" target="_blank" rel="noopener noreferrer">Stack Overflow：直观理解 Embeddings</a> —— 先建立直觉</li>
+                    <li class="resource-item"><span class="tag-optional">[选读]</span> <a href="https://platform.openai.com/docs/guides/embeddings" target="_blank" rel="noopener noreferrer">OpenAI Embeddings 指南</a></li>
+                </ul>
+                <div class="task-box">
+                    <span class="task-label">动手：</span>embed 20 个句子，做一个最近邻搜索
+                </div>
+                <a href="notes.html#note-9" class="week-note-link">我的笔记 →</a>
+            </article>
+
+            <!-- Week 10 -->
+            <article id="week-10" class="week-card">
+                <h3 class="week-title">Week 10 · 向量数据库 + 元数据过滤</h3>
+                <ul class="resource-list">
+                    <li class="resource-item"><span class="tag-required">[必读]</span> <a href="https://docs.trychroma.com/" target="_blank" rel="noopener noreferrer">Chroma</a> —— 本地原型最快，上手零摩擦</li>
+                    <li class="resource-item"><span class="tag-optional">[选读]</span> <a href="https://www.pinecone.io/learn/" target="_blank" rel="noopener noreferrer">Pinecone 学习中心</a> —— 托管向量库的系统教程</li>
+                    <li class="resource-item"><span class="tag-optional">[选读]</span> <a href="https://github.com/pgvector/pgvector" target="_blank" rel="noopener noreferrer">pgvector</a> —— 已经在用 Postgres 就选它</li>
+                </ul>
+                <div class="task-box">
+                    <span class="task-label">动手：</span>把 50–100 页文档索引进 Chroma，写一个 top-5 查询函数
+                </div>
+                <a href="notes.html#note-10" class="week-note-link">我的笔记 →</a>
+            </article>
+
+            <!-- Week 11 -->
+            <article id="week-11" class="week-card">
+                <h3 class="week-title">Week 11 · 重排 + 检索质量</h3>
+                <ul class="resource-list">
+                    <li class="resource-item"><span class="tag-required">[必读]</span> <a href="https://www.pinecone.io/learn/retrieval-augmented-generation/#retrieval-quality" target="_blank" rel="noopener noreferrer">Pinecone：提升检索质量</a> —— 语义漂移、切块边界问题的解法</li>
+                    <li class="resource-item"><span class="tag-optional">[选读]</span> <a href="https://docs.cohere.com/docs/reranking-with-cohere" target="_blank" rel="noopener noreferrer">Cohere Rerank 文档</a> —— 两阶段检索的第二阶段</li>
+                </ul>
+                <div class="task-box">
+                    <span class="task-label">动手：</span>给 Week 10 的检索加上 rerank，对比 top-5 质量变化
+                </div>
+                <a href="notes.html#note-11" class="week-note-link">我的笔记 →</a>
+            </article>
+
+            <!-- Week 12 -->
+            <article id="week-12" class="week-card">
+                <h3 class="week-title">Week 12 · 幻觉控制 + 引用 + 框架</h3>
+                <ul class="resource-list">
+                    <li class="resource-item"><span class="tag-required">[必读]</span> <a href="https://developers.llamaindex.ai/python/framework/understanding/rag/" target="_blank" rel="noopener noreferrer">LlamaIndex RAG 入门</a> —— M3 用 LlamaIndex</li>
+                    <li class="resource-item"><span class="tag-optional">[选读]</span> <a href="https://docs.anthropic.com/en/docs/build-with-claude/citations" target="_blank" rel="noopener noreferrer">Anthropic Citations</a> —— 让回答带上出处</li>
+                    <li class="resource-item"><span class="tag-optional">[选读]</span> <a href="https://docs.langchain.com/oss/python/langchain/rag" target="_blank" rel="noopener noreferrer">LangChain RAG Agent</a> —— M4 转 LangChain 做 Agent</li>
+                </ul>
+                <div class="task-box">
+                    <span class="task-label">动手：</span>做一个"和你的文档聊天"的 FastAPI 应用，10–20 个 PDF，回答带引用
+                </div>
+                <a href="notes.html#note-12" class="week-note-link">我的笔记 →</a>
+            </article>
+        </section>
+
+        <!-- MONTH 4 -->
+        <section id="m4" class="month-block">
+            <h2 class="month-block-title">M4：Agent 与评测</h2>
+
+            <!-- Week 13 -->
+            <article id="week-13" class="week-card">
+                <h3 class="week-title">Week 13 · Agent 循环 + 工具选择</h3>
+                <ul class="resource-list">
+                    <li class="resource-item"><span class="tag-required">[必读]</span> <a href="https://www.anthropic.com/research/building-effective-agents" target="_blank" rel="noopener noreferrer">Anthropic：Building Effective Agents</a> —— Agent 必读，先读它</li>
+                    <li class="resource-item"><span class="tag-optional">[选读]</span> <a href="https://cdn.openai.com/business-guides-and-resources/a-practical-guide-to-building-agents.pdf" target="_blank" rel="noopener noreferrer">OpenAI 实用 Agent 指南（PDF）</a></li>
+                    <li class="resource-item"><span class="tag-optional">[选读]</span> <a href="https://academy.langchain.com/courses/intro-to-langgraph" target="_blank" rel="noopener noreferrer">LangChain Academy：LangGraph 入门</a></li>
+                </ul>
+                <div class="task-box">
+                    <span class="task-label">动手：</span>不用框架，纯手写一个 Agent（raw API + 3 个工具）
+                </div>
+                <a href="notes.html#note-13" class="week-note-link">我的笔记 →</a>
+            </article>
+
+            <!-- Week 14 -->
+            <article id="week-14" class="week-card">
+                <h3 class="week-title">Week 14 · 状态管理 + 失败重试</h3>
+                <ul class="resource-list">
+                    <li class="resource-item"><span class="tag-required">[必读]</span> <a href="https://langchain-ai.github.io/langgraph/concepts/low_level/#state" target="_blank" rel="noopener noreferrer">LangGraph 状态管理</a> —— TypedDict 状态与检查点</li>
+                    <li class="resource-item"><span class="tag-optional">[选读]</span> <a href="https://realpython.com/langgraph-python/" target="_blank" rel="noopener noreferrer">Real Python：LangGraph</a> —— 实战教程</li>
+                </ul>
+                <div class="task-box">
+                    <span class="task-label">动手：</span>给 Week 13 的 Agent 加上最大迭代次数和工具级重试
+                </div>
+                <a href="notes.html#note-14" class="week-note-link">我的笔记 →</a>
+            </article>
+
+            <!-- Week 15 -->
+            <article id="week-15" class="week-card">
+                <h3 class="week-title">Week 15 · 什么时候不用 Agent + 工作流模式</h3>
+                <ul class="resource-list">
+                    <li class="resource-item"><span class="tag-required">[必读]</span> <a href="https://www.anthropic.com/research/building-effective-agents#workflow-patterns" target="_blank" rel="noopener noreferrer">Anthropic Workflow Patterns</a> —— 链式、路由、并行、编排四种模式</li>
+                    <li class="resource-item"><span class="tag-optional">[选读]</span> <a href="https://simonwillison.net/2025/Sep/30/designing-agentic-loops/" target="_blank" rel="noopener noreferrer">Simon Willison：设计 Agentic Loops</a></li>
+                </ul>
+                <div class="task-box">
+                    <span class="task-label">记住：</span>3 个固定的 LLM 调用，永远比"可能调 3 次"的 Agent 更快更便宜更好调<br>
+                    <span class="task-label">动手：</span>做一个 3 步内容流水线——抽事实→并行生成推文+帖子+摘要→打分选最优
+                </div>
+                <a href="notes.html#note-15" class="week-note-link">我的笔记 →</a>
+            </article>
+
+            <!-- Week 16 -->
+            <article id="week-16" class="week-card">
+                <h3 class="week-title">Week 16 · 评测 + 成功指标</h3>
+                <ul class="resource-list">
+                    <li class="resource-item"><span class="tag-required">[必读]</span> <a href="https://hamel.dev/blog/posts/evals/" target="_blank" rel="noopener noreferrer">Hamel Husain：你的 AI 产品需要 Evals</a> —— 先读这篇再谈评测</li>
+                    <li class="resource-item"><span class="tag-optional">[选读]</span> <a href="https://deepeval.com/docs/getting-started" target="_blank" rel="noopener noreferrer">DeepEval</a> —— 开源评测框架</li>
+                    <li class="resource-item"><span class="tag-optional">[选读]</span> <a href="https://github.com/promptfoo/promptfoo" target="_blank" rel="noopener noreferrer">Promptfoo</a> —— prompt 回归测试</li>
+                </ul>
+                <div class="task-box">
+                    <span class="task-label">动手：</span>给 M3 的 RAG 管线搭评测——30 组问答，改一个参数就重跑
+                </div>
+                <a href="notes.html#note-16" class="week-note-link">我的笔记 →</a>
+            </article>
+        </section>
+
+        <!-- MONTH 5 -->
+        <section id="m5" class="month-block">
+            <h2 class="month-block-title">M5：部署与可靠性</h2>
+
+            <!-- Week 17 -->
+            <article id="week-17" class="week-card">
+                <h3 class="week-title">Week 17 · FastAPI 生产部署 + Docker</h3>
+                <ul class="resource-list">
+                    <li class="resource-item"><span class="tag-required">[必读]</span> <a href="https://docs.docker.com/get-started/" target="_blank" rel="noopener noreferrer">Docker 官方入门</a> —— 容器是部署的基本功</li>
+                    <li class="resource-item"><span class="tag-optional">[选读]</span> <a href="https://fastapi.tiangolo.com/deployment/" target="_blank" rel="noopener noreferrer">FastAPI 部署文档</a> —— Gunicorn + Uvicorn workers，别裸跑</li>
+                </ul>
+                <div class="task-box">
+                    <span class="task-label">动手：</span>把 M3 的 RAG 应用容器化，docker compose 一键起（app + 向量库 + Redis）
+                </div>
+                <a href="notes.html#note-17" class="week-note-link">我的笔记 →</a>
+            </article>
+
+            <!-- Week 18 -->
+            <article id="week-18" class="week-card">
+                <h3 class="week-title">Week 18 · 后台任务 + 鉴权安全</h3>
+                <ul class="resource-list">
+                    <li class="resource-item"><span class="tag-required">[必读]</span> <a href="https://owasp.org/API-Security/" target="_blank" rel="noopener noreferrer">OWASP API Security Top 10</a> —— 上线前对照检查</li>
+                    <li class="resource-item"><span class="tag-optional">[选读]</span> <a href="https://fastapi.tiangolo.com/tutorial/background-tasks/" target="_blank" rel="noopener noreferrer">FastAPI 后台任务</a> —— 轻量任务直接用</li>
+                    <li class="resource-item"><span class="tag-optional">[选读]</span> <a href="https://fastapi.tiangolo.com/tutorial/security/" target="_blank" rel="noopener noreferrer">FastAPI 安全文档</a> —— JWT 与 API Key</li>
+                </ul>
+                <div class="task-box">
+                    <span class="task-label">动手：</span>给应用加上鉴权、限流，密钥全部走环境变量
+                </div>
+                <a href="notes.html#note-18" class="week-note-link">我的笔记 →</a>
+            </article>
+
+            <!-- Week 19 -->
+            <article id="week-19" class="week-card">
+                <h3 class="week-title">Week 19 · 可观测 + 提示词版本管理</h3>
+                <ul class="resource-list">
+                    <li class="resource-item"><span class="tag-required">[必读]</span> <a href="https://langfuse.com/docs/observability/overview" target="_blank" rel="noopener noreferrer">Langfuse</a> —— 每次 LLM 调用全链路追踪</li>
+                    <li class="resource-item"><span class="tag-optional">[选读]</span> <a href="https://smith.langchain.com/" target="_blank" rel="noopener noreferrer">LangSmith</a> —— LangChain 生态的观测</li>
+                </ul>
+                <div class="task-box">
+                    <span class="task-label">注：</span>提示词即代码——版本化每一次修改，能 A/B 测试，能回滚<br>
+                    <span class="task-label">动手：</span>接上追踪，看一次完整请求的 prompt、输出、token、延迟、成本
+                </div>
+                <a href="notes.html#note-19" class="week-note-link">我的笔记 →</a>
+            </article>
+
+            <!-- Week 20 -->
+            <article id="week-20" class="week-card">
+                <h3 class="week-title">Week 20 · 成本监控 + 缓存</h3>
+                <ul class="resource-list">
+                    <li class="resource-item"><span class="tag-required">[必读]</span> <a href="https://www.helicone.ai/" target="_blank" rel="noopener noreferrer">Helicone</a> —— 成本与用量监控</li>
+                    <li class="resource-item"><span class="tag-optional">[选读]</span> <a href="https://github.com/BerriAI/litellm" target="_blank" rel="noopener noreferrer">LiteLLM</a> —— 多模型统一网关</li>
+                    <li class="resource-item"><span class="tag-optional">[选读]</span> <a href="https://redis.io/docs/" target="_blank" rel="noopener noreferrer">Redis 官方文档</a> —— 相同请求直接缓存，别重复花钱</li>
+                </ul>
+                <div class="task-box">
+                    <span class="task-label">动手：</span>设每日/每月花费上限，给高频请求加上缓存，统计命中率
+                </div>
+                <a href="notes.html#note-20" class="week-note-link">我的笔记 →</a>
+            </article>
+        </section>
+
+        <!-- MONTH 6 -->
+        <section id="m6" class="month-block">
+            <h2 class="month-block-title">M6：选方向，成为能上场的人</h2>
+            <p style="margin-bottom: 1.5rem; color: var(--text-muted); font-size: 0.95rem;">三个方向三选一，Week 21–Week 23 各对应一个方向，Week 24 通用。</p>
+
+            <!-- Week 21 -->
+            <article id="week-21" class="week-card">
+                <h3 class="week-title">Week 21 · 方向一：AI 产品工程师（想快速进初创公司选它）</h3>
+                <ul class="resource-list">
+                    <li class="resource-item"><span class="tag-required">[必读]</span> <a href="https://pair.withgoogle.com/guidebook/" target="_blank" rel="noopener noreferrer">Google People + AI Guidebook</a> —— AI 产品的 UX 设计指南</li>
+                    <li class="resource-item"><span class="tag-optional">[选读]</span> <a href="https://sdk.vercel.ai/docs" target="_blank" rel="noopener noreferrer">Vercel AI SDK</a> —— 前端 AI 应用的最快路径</li>
+                    <li class="resource-item"><span class="tag-optional">[选读]</span> <a href="https://docs.streamlit.io/" target="_blank" rel="noopener noreferrer">Streamlit</a> —— Python 一把梭做出 demo</li>
+                </ul>
+                <div class="task-box">
+                    <span class="task-label">动手：</span>本月交付 2–3 个完整可演示的项目，部署上线
+                </div>
+                <a href="notes.html#note-21" class="week-note-link">我的笔记 →</a>
+            </article>
+
+            <!-- Week 22 -->
+            <article id="week-22" class="week-card">
+                <h3 class="week-title">Week 22 · 方向二：应用 ML / LLM 工程师（想走更硬核的技术路线选它）</h3>
+                <ul class="resource-list">
+                    <li class="resource-item"><span class="tag-required">[必读]</span> <a href="https://platform.openai.com/docs/guides/fine-tuning" target="_blank" rel="noopener noreferrer">OpenAI 微调指南</a> —— 先搞清何时该微调、何时不该</li>
+                    <li class="resource-item"><span class="tag-optional">[选读]</span> <a href="https://github.com/unslothai/unsloth" target="_blank" rel="noopener noreferrer">Unsloth</a> —— 高效微调工具</li>
+                    <li class="resource-item"><span class="tag-optional">[选读]</span> <a href="https://ollama.ai/" target="_blank" rel="noopener noreferrer">Ollama</a> —— 本地跑开源模型做实验</li>
+                </ul>
+                <div class="task-box">
+                    <span class="task-label">动手：</span>用 LoRA 微调一个小模型，对比微调前后效果，算清成本账
+                </div>
+                <a href="notes.html#note-22" class="week-note-link">我的笔记 →</a>
+            </article>
+
+            <!-- Week 23 -->
+            <article id="week-23" class="week-card">
+                <h3 class="week-title">Week 23 · 方向三：AI 自动化工程师（想立刻给企业做东西选它）</h3>
+                <ul class="resource-list">
+                    <li class="resource-item"><span class="tag-required">[必读]</span> <a href="https://docs.n8n.io/" target="_blank" rel="noopener noreferrer">n8n 文档</a> —— 工作流自动化平台</li>
+                    <li class="resource-item"><span class="tag-optional">[选读]</span> <a href="https://docs.temporal.io/" target="_blank" rel="noopener noreferrer">Temporal</a> —— 可靠的工作流编排</li>
+                </ul>
+                <div class="task-box">
+                    <span class="task-label">动手：</span>做一个端到端的线索筛选系统——导入线索→LLM 逐个调研→打分排序→写个性化 outreach→记入表格/CRM（能卖钱的那种）
+                </div>
+                <a href="notes.html#note-23" class="week-note-link">我的笔记 →</a>
+            </article>
+
+            <!-- Week 24 -->
+            <article id="week-24" class="week-card">
+                <h3 class="week-title">Week 24 · 作品集打磨 + 出发</h3>
+                <ul class="resource-list">
+                    <li class="resource-item">整理 6 个月的项目：每个都有 README、能跑的 demo、清晰的文档</li>
+                    <li class="resource-item">GitHub 主页收拾干净，项目置顶</li>
+                    <li class="resource-item">公开分享学习过程（X / LinkedIn）：教是最好的学，声誉带来机会</li>
+                    <li class="resource-item">别等"准备好了"：有能跑的项目就可以开始投简历、接单。市场奖励 ship 的人，不奖励完美主义者</li>
+                </ul>
+                <a href="notes.html#note-24" class="week-note-link">我的笔记 →</a>
+            </article>
+        </section>
+    </main>
+
+    <!-- Shared Slim Footer -->
+    <footer class="site-footer">
+        <p class="footer-line-1">学习中 · Work in progress — 学到哪章，更新到哪章。</p>
+        <div class="footer-line-2">
+            <a href="index.html">首页 / Home</a> ·
+            <a href="guide.html">指南 / Guide</a> ·
+            <a href="resources.html">资料库 / Resources</a> ·
+            <a href="notes.html">笔记本 / Notes</a> ·
+            <a href="build-log.html">建站手记 / Build Log</a> ·
+            <a href="https://x.com/DeRonin_/status/2033587293064204349" target="_blank" rel="noopener noreferrer">DeRonin_ 原文 ↗</a>
+        </div>
+    </footer>
+</body>
+</html>
